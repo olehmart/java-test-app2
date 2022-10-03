@@ -1,3 +1,10 @@
+# 1.0.0 (2022-10-03)
+
+
+### Features
+
+* init ([d5a0d5d](https://github.com/olehmart/java-test-app2/commit/d5a0d5d713e459bebeb87eca88444190f1529a0b))
+
 # [1.27.0](https://github.com/olehmart/java-test-app/compare/v1.26.0...v1.27.0) (2022-09-30)
 
 
