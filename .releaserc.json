@@ -1,0 +1,41 @@
+{
+  "branches": [
+    "main"
+  ],
+  "debug": true,
+  "ci": true,
+  "dryRun": false,
+  "plugins": [
+    "@semantic-release/commit-analyzer",
+    "@semantic-release/release-notes-generator",
+    "@semantic-release/changelog",
+    [
+      "@semantic-release/exec",
+      {
+          "prepareCmd": "./prepare-release.sh ${nextRelease.version}"
+      }
+    ],
+    [
+      "@semantic-release/github",
+      {
+        "assets": [
+          {
+            "path": "release/*.jar"
+          }
+        ],
+        "successComment": true,
+        "addReleases": "top"
+      }
+    ],
+    [
+      "@semantic-release/git",
+      {
+          "assets": [
+              "CHANGELOG.md",
+              "pom.xml"
+          ],
+          "message": "chore(release): ${nextRelease.version}\n\n${nextRelease.notes}"
+      }
+    ]
+  ]
+}
